@@ -5,8 +5,8 @@ namespace BusinessLogicDataBase.BattleLogic
 {
     public class Battle : IBattle
     {
-        private IPlayer? Player { get; }
-        private IPlayer? Monster { get; }
+        private IPlayer? Player { get; set; }
+        private IPlayer? Monster { get; set; }
 
         public Battle() { }
 
@@ -83,6 +83,11 @@ namespace BusinessLogicDataBase.BattleLogic
             }
 
             return log;
+        }
+        public void CreateCouple(Opponents character)
+        {
+            Player = character.Player;
+            Monster = character.Monster;
         }
     }
 }
