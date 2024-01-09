@@ -7,7 +7,6 @@ namespace BusinessLogicDataBase.Controllersс
     public class MonsterController
     {
         private readonly MonstersDbContext _db;
-
         public MonsterController(MonstersDbContext db) => _db = db;
 
         [HttpGet]
@@ -15,8 +14,8 @@ namespace BusinessLogicDataBase.Controllersс
         public JsonResult GetRandom()
         {
             var count = _db.Monsters.Count();
-            int i = 0;
-            return new JsonResult(_db.Monsters.ToList().ElementAt(i++%count));
+            var rnd = new Random().Next(0,count);
+            return new JsonResult(_db.Monsters.ToList().ElementAt(rnd));
         }
     }
 }

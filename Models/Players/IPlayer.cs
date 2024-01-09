@@ -1,4 +1,4 @@
-namespace Models
+namespace Models.Players
 {
     public interface IPlayer
     {

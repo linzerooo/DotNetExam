@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-namespace Models
+namespace Models.Players
 {
     public class Player : IPlayer
     {
